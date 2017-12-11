@@ -18,7 +18,12 @@ ul{
 
 /* Header **/
 header{
-    background:url(img.jpg) no-repeat;
+    background:#35424a;
+    color:#ffffff;
+    padding-top:30px;
+    min-height:70px;
+    border-bottom:#e8491d 3px solid;
+}
 
 
 header a{
@@ -62,4 +67,9 @@ header .highlight, header .current a{
 header a:hover{
     color:#cccccc;
     font-weight:bold;
+}
+
+#showcase{
+    min-height:400px;
+    background:url('img.jpg')no-repeat 0 -400px;
 }
