@@ -86,12 +86,7 @@ header a:hover{
     font-weight:bold;
 }
 
-#showcase{
-    min-height:400px;
-    background:url('img.jpg')no-repeat 0 -400px;
-    text-align:center;
-    color:#ffffff;
-}
+
 
 #showcase h1{
     margin-top:100px;
