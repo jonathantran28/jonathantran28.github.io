@@ -1,0 +1,13 @@
+x = int(input())
+def recursive (n)
+	first = 1
+	r = 3
+	sume = 1
+	print (first)
+	for i in range (n-1)
+		second = first * r
+		print (second)
+		first = second
+		map = first * r
+		sume = sume + second
+	print ('The sum of all the values is: ' +str (sume))
