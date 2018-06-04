@@ -1,0 +1,72 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Processing Demo</title>
+<script type="text/javascript" src="./img/processing.js"></script>
+</head>
+
+<body>
+<script type="text/processing">
+
+///Processing code goes in between the script tags
+PImage background;
+PImage astro;
+PImage aster;
+
+int x = 0; int count = 0; int Dy = 0; int Vy = 0; // Gravity
+int gamestate = 0;
+int[] wx = new int[2];
+int[] wy = new int[2]; 
+void setup(){
+  size(1000, 563);
+  astro = loadImage("./img/astronaut.png");
+  background = loadImage("./img/space.png"); //load and saves image to variable
+  aster = loadImage("./img/asteroid.png");
+}
+
+void draw(){
+  if (gamestate == 0){
+  // backgroung Control
+  image(background,0 + x, 0);
+  image(background, 1000 + x, 0);
+  if (x == - 988){
+    x = 0;
+  }
+  image(astro, 100, Dy);
+  x--;
+  Vy++;
+  Dy = Dy + Vy;
+  if (Dy > 600){
+    gamestate = 2;
+  }
+}
+
+  if (gamestate == 2){
+    textSize(40);fill(255,70,60);
+    text("YOU HAVE DIED?!?!?!?",400,200,250,250);
+    rect(400, 350, 200, 50,10);
+    fill(255); 
+    text("RESTART!!!",400,350,200,50);
+    
+  if (mouseX > 400 && mouseX < 600 && mouseY > 350 && mouseY < 400){
+    textSize(40);fill(255,255,0);
+    rect(400, 350, 200, 50,10);
+    fill(255); 
+    text("RESTART!!!",400,350,200,50);
+    
+    if (mousePressed){
+      gamestate = 0;
+      Dy = 200;
+    } 
+    }
+  }
+}
+
+void mousePressed() {
+  Vy = - 17;
+}
+</script>
+<canvas id="sketch" style="border: 1px solid black;"></canvas>
+</body>
+</html>
